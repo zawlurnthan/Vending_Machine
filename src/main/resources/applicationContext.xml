@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Bean definitions go here -->
+    <bean id="userIO" class="ui.UserIOConsoleImpl"/>
+
+    <bean id="view" class="ui.VMView">
+        <constructor-arg ref="userIO"/>
+    </bean>
+
+    <bean id="dao"
+          class="dao.VMDaoFileImpl"/>
+
+    <bean id="auditDao"
+          class="dao.VMAuditDaoFileImpl"/>
+
+    <bean id="service"
+          class="service.VMServiceLayerImpl">
+        <constructor-arg ref="dao"/>
+        <constructor-arg ref="auditDao"/>
+    </bean>
+
+    <bean id="controller"
+          class="controller.VMController">
+        <constructor-arg ref="service"/>
+        <constructor-arg ref="view"/>
+    </bean>
+
+</beans>

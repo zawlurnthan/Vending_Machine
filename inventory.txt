@@ -1,0 +1,10 @@
+1::Coke::1.35::0
+2::Dr.Pepper::1.99::11
+3::Sprite::2.29::12
+4::Mountain Dew::1.99::3
+5::Root Beer::1.99::9
+6::Monster::2.08::8
+7::Pepsi::2.08::8
+8::Red Bull::2.99::12
+9::Snapple::1.66::5
+10::Propel::1.49::9
